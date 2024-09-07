@@ -119,12 +119,13 @@ In a continuous integration environment, builds are triggered frequently (e.g., 
 For scheduled jobs that run periodically (e.g., nightly builds), there is a risk that a build might take longer than expected, overlapping with the next scheduled build. This script ensures that the next build does not start until the previous one completes, maintaining a clear separation between builds.
 
 
+## Differences Between Queuing and Failing Concurrent Builds
+
 When managing Jenkins jobs, there are generally two approaches to handling concurrent builds:
 
 1. **Queuing Builds**: When a build is running and another build request comes in, the new request is placed in a queue and will start automatically once the current build finishes.
 2. **Failing Concurrent Builds**: When a build is running and another build request comes in, the new request is failed immediately with an appropriate message, and it is not queued.
 
-### Differences Between Queuing and Failing Concurrent Builds
 
 #### Queuing Builds
 
@@ -159,45 +160,6 @@ Consider a scenario where you have a Jenkins job that performs a critical deploy
 ### Conclusion
 
 While queuing builds is useful in many scenarios, failing concurrent builds provides greater control, immediate feedback, and more efficient resource management, especially in environments where resources are limited, and quick feedback is essential. This approach helps maintain the stability and reliability of the CI/CD pipeline by avoiding potential conflicts and resource contention.
-
-
-## Differences Between Queuing and Failing Concurrent Builds
-
-When managing Jenkins jobs, there are two primary approaches to handling concurrent builds:
-
-1. **Queuing Builds**: New build requests are placed in a queue and will start automatically once the current build finishes.
-2. **Failing Concurrent Builds**: New build requests fail immediately if another instance of the same job is already running.
-
-### Queuing Builds
-
-- **Automatic Execution**: Queued builds start automatically after the current build completes.
-- **Build Order**: Maintains the order of build requests, ensuring all builds eventually run.
-- **Resource Contention**: Long queues can form, leading to resource contention and delays.
-- **Resource Management**: Multiple queued builds can create resource bottlenecks.
-
-### Failing Concurrent Builds
-
-- **Immediate Feedback**: Concurrent build requests fail immediately, providing instant feedback.
-- **Manual Intervention**: Users must manually re-trigger builds after the current build completes.
-- **Resource Efficiency**: Prevents resource bottlenecks by not tying up resources with queued builds.
-- **Reduced Wait Times**: No extended wait times for queued builds, providing quicker feedback.
-
-## Why Implement Failing Concurrent Builds?
-
-1. **Resource Management**: Prevents resource bottlenecks in environments with limited resources.
-2. **Avoiding Long Queues**: Avoids long build queues, ensuring quick feedback cycles.
-3. **Immediate Awareness**: Brings immediate attention to ongoing builds, prompting better build management.
-4. **Controlled Build Triggers**: Ensures builds are triggered manually, avoiding redundant builds.
-5. **Custom Handling**: Allows for custom handling of concurrent build failures, such as notifications or logging.
-
-### Example Use Case
-
-For critical deployments to production environments, failing concurrent builds ensures:
-
-- **Immediate Notification**: Teams are immediately notified of ongoing deployments.
-- **Controlled Deployments**: Teams can manually re-trigger deployments, ensuring orderly processes.
-- **Avoiding Downtime**: Reduces the risk of downtime or conflicts, maintaining stability.
-
 
 - Failing concurrent builds provides greater control, immediate feedback, and efficient resource management, especially in environments requiring quick feedback and stability. T
 - his approach helps maintain the reliability of the CI/CD pipeline by avoiding conflicts and resource contention.
