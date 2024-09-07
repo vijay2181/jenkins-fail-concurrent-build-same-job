@@ -184,7 +184,3 @@ While queuing builds is useful in many scenarios, failing concurrent builds prov
 ## Conclusion
 
 This Jenkins pipeline script provides an effective way to manage concurrent builds, ensuring efficient resource utilization and reliable builds. By implementing this script, you can prevent conflicts, avoid resource contention, and maintain a more stable CI/CD environment.
-
----
-
-Feel free to modify the content as per your specific requirements or add more details if necessary.
