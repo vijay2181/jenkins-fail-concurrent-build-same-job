@@ -157,12 +157,7 @@ Consider a scenario where you have a Jenkins job that performs a critical deploy
 - **Controlled Deployments**: The team can manually assess the situation and re-trigger the deployment once the current one completes, ensuring controlled and orderly deployments.
 - **Avoiding Downtime**: This approach reduces the risk of downtime or deployment conflicts, maintaining the stability of the production environment.
 
-### Conclusion
 
-While queuing builds is useful in many scenarios, failing concurrent builds provides greater control, immediate feedback, and more efficient resource management, especially in environments where resources are limited, and quick feedback is essential. This approach helps maintain the stability and reliability of the CI/CD pipeline by avoiding potential conflicts and resource contention.
-
-- Failing concurrent builds provides greater control, immediate feedback, and efficient resource management, especially in environments requiring quick feedback and stability. T
-- his approach helps maintain the reliability of the CI/CD pipeline by avoiding conflicts and resource contention.
 
 
 ## How It Is Useful
@@ -181,6 +176,9 @@ While queuing builds is useful in many scenarios, failing concurrent builds prov
 
 - **Queue Management**: Instead of queuing multiple builds, this script fails the current build, allowing the user to trigger it manually when the previous build completes. This simplifies build management and ensures that resources are not unnecessarily tied up.
 
-## Conclusion
+### Conclusion
 
-This Jenkins pipeline script provides an effective way to manage concurrent builds, ensuring efficient resource utilization and reliable builds. By implementing this script, you can prevent conflicts, avoid resource contention, and maintain a more stable CI/CD environment.
+While queuing builds is useful in many scenarios, failing concurrent builds provides greater control, immediate feedback, and more efficient resource management, especially in environments where resources are limited, and quick feedback is essential. This approach helps maintain the stability and reliability of the CI/CD pipeline by avoiding potential conflicts and resource contention.
+
+- Failing concurrent builds provides greater control, immediate feedback, and efficient resource management, especially in environments requiring quick feedback and stability. T
+- his approach helps maintain the reliability of the CI/CD pipeline by avoiding conflicts and resource contention.
