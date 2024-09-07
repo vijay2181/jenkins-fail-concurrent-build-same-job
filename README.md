@@ -1,0 +1,1 @@
+# jenkins-fail-concurrent-build-same-job
