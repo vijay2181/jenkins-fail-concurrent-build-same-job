@@ -1,9 +1,9 @@
-# Jenkins Pipeline for Managing Concurrent Builds
+# Jenkins Pipeline for Managing Concurrent Builds With Feedback
 
 * created jenkins pipeline script that manages concurrent builds of the same job
 * took higher priority on conserving resources and avoiding potential conflicts or race conditions, since we have low resources and high build time.
 * when a build is running and another build request comes in for same PR, the new request is failed immediately with an appropriate message that "currenly on-going build is in progress, won't perform this action right away", and it is not queued.
-* so for each build, you will get status back as a response in form of comments
+* so for each build, you will get status back as a response in form of comments inside PR 
 
 
 ```
