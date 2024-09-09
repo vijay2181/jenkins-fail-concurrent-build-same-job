@@ -1,12 +1,12 @@
 
 # abort-all-previous-jobs-start-only-latest
 
-/*
+```
 Author:  vijay
 This script works with workflow to cancel other running builds for the same job
 Use case: many build may go to QA, but only the build that is accepted is needed,
 the other builds in the workflow should be aborted
-*/
+```
 
 
 ```
